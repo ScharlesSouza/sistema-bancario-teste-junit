@@ -141,6 +141,9 @@ public class Conta implements Cadastro {
      */
     public void depositoDinheiro(final double valor) {
         // TODO: Você precisa implementar este método
+        if(valor<0){
+            throw new IllegalArgumentException("Valor de deposito não pode ser negativo!");
+        }
         Movimentacao movimentacao = new Movimentacao(this);
         movimentacao.setConfirmada(true);
         movimentacao.setTipo('C');

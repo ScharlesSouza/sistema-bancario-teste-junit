@@ -92,4 +92,18 @@ public class ContaTest {
         
     }
     
+    @Test
+    void testDepositoDinheiroNegativo(){
+        final double limite = 500, depositoNegativo=-200, esperado =500;//se o deposito for negativo cancela a operação e mantem o saldo e saldoTotal
+        final Conta instance = new Conta();
+        instance.setEspecial(true);
+        instance.setLimite(limite);
+        
+        
+        assertThrows(IllegalArgumentException.class, ()->instance.depositoDinheiro(depositoNegativo));
+        final double obtido = instance.getSaldoTotal();
+        assertEquals(obtido, esperado, 0.001);
+        
+    }
+    
 }
