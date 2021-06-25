@@ -1,2 +1,2 @@
 # sistema-bancario-teste-junit
-[](relatorio.png)
+![](relatorio.png)
